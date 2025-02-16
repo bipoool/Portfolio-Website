@@ -60,7 +60,7 @@ function Projects() {
               imgPath={snakeGame}
               isOs={false}
               title="Snake Game"
-              description="Just a small game I made for fun in free time. Click on Demo button to play"
+              description="Just a small game I made for fun in free time. Click on Demo button to play, use W A S D keys to play"
               ghLink="https://github.com/bipoool/snakeGame"
               demoLink="/snake-game"
             />
