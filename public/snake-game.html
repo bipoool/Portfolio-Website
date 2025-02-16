@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Snake World
+        </title>
+
+        <style>
+            body{
+                background-color: transparent;
+            }
+            h1{
+                color: white;
+                text-align: center;
+            }
+            
+            #container{
+            
+                background-color: black;
+                width: 500px;
+                height: 500px;
+                border: solid 3px red;
+                position: relative;
+                top: 50px;
+                margin: 0px auto;
+            
+            }
+            
+            #snake{
+            
+                top: 0;
+                left: 0;
+            
+            }
+            
+            #snake .body{
+            
+                height: 10px;
+                width: 10px;
+                background-color: rgb(0, 158, 21);
+                position: absolute;
+                border: dashed 1px black;
+            
+            }
+            
+            
+            .s1{
+                top:40px;
+            }
+            .s2{
+                top:30px;
+            }
+            .s3{
+                top:20px;
+            }
+            .s4{
+                top:10px;
+            }
+            .s5{
+                top:0px;
+            }
+            
+            
+            .food{
+            
+                height: 15px;
+                width: 15px;
+                background-color: rgb(255, 0, 0);
+                position: absolute;
+                top: 255px;
+                left: 255px;
+                border-radius: 10px;
+                
+            }
+            
+            
+            #scoreBoard{
+                position: fixed;
+                width: 100%;
+                height: 95px;
+                background-color: rgb(35, 28, 43);
+                bottom: 0;
+                left: 0;
+                text-align: center;
+                color: white;
+                text-decoration: underline;
+                
+            }
+            
+            #score{
+                font-size: 35px;
+            }            
+        </style>
+
+        
+
+    </head>
+
+    <body>
+        <h1>Snake Game</h1>
+
+        <div id="container">
+            
+            <div id="snake">
+
+                <div class="body s5"></div>
+                <div class="body s4"></div>
+                <div class="body s3"></div>
+                <div class="body s2"></div>
+                <div class="body s1"></div>
+                
+            </div>
+
+            <div class="food"></div>
+
+        </div>
+
+        <div id = "scoreBoard">
+            <h3>Score Board</h3>
+            <p><strong id="score">0</strong></p>
+        </div>
+
+        <script>
+            
+//intializing the snake
+var len = 5
+var x1=255, y1=255;
+x = 0;
+y = 40;
+var x1, y1
+var head = 1, tail = len;
+var down,up,left,right
+
+
+setInterval(eaten,5)
+var out =  setInterval(outOfBound,10)
+document.addEventListener('keydown', function(event) {
+    if (event.code == 'KeyS') {
+        clearInterval(up)
+        clearInterval(left)
+        clearInterval(right)
+        clearInterval(down)
+        down = setInterval(goDown,30)
+        
+    }
+    else if (event.code == 'KeyW') {
+        clearInterval(down)
+        clearInterval(left)
+        clearInterval(right)
+        clearInterval(up)
+        up = setInterval(goUp,30)
+    }
+    else if (event.code == 'KeyA') {
+        clearInterval(up)
+        clearInterval(down)
+        clearInterval(right)
+        clearInterval(left)
+        left = setInterval(goLeft,30)
+    }
+    else if (event.code == 'KeyD') {
+        clearInterval(up)
+        clearInterval(left)
+        clearInterval(down)
+        clearInterval(right)
+        right = setInterval(goRight,30)
+    }
+
+  });
+
+
+  function goDown(){
+
+    var block = document.getElementsByClassName("s" + tail.toString())
+    block[0].style.top = (y+10).toString() + "px"
+    block[0].style.left = x.toString()+ "px"
+    y+=10;
+    head = head - 1;
+    if(head===0)head = len;
+    tail = tail - 1;
+    if(tail===0)tail = len;
+
+}
+
+function goUp(){
+
+    var block = document.getElementsByClassName("s" + tail.toString())
+    block[0].style.top = (y-10).toString() + "px"
+    block[0].style.left = x.toString()+ "px"
+    y-=10;
+    head = head - 1;
+    if(head===0)head = len;
+    tail = tail - 1;
+    if(tail===0)tail = len;
+      
+}
+
+function goLeft(){
+
+    var block = document.getElementsByClassName("s" + tail.toString())
+    block[0].style.top = y.toString() + "px"
+    block[0].style.left = (x-10).toString() +"px"
+    x-=10;
+    head = head - 1;
+    if(head===0)head = len;
+    tail = tail - 1;
+    if(tail===0)tail = len;
+
+}
+
+function goRight(){
+
+    var block = document.getElementsByClassName("s" + tail.toString())
+    block[0].style.top = y.toString() + "px"
+    block[0].style.left = (x+10).toString()+ "px"
+    x+=10;
+    head = head - 1;
+    if(head===0)head = len;
+    tail = tail - 1;
+    if(tail===0)tail = len;
+
+}
+
+
+function outOfBound(){
+    if(x>495 || x<0 || y>495 || y<0){
+        alert("u lost!!")
+        clearInterval(out)
+        clearInterval(up)
+        clearInterval(down)
+        clearInterval(right)
+        clearInterval(left)
+        location.reload()
+    }
+    
+}
+
+function makeFood(){
+
+    x1 = Math.floor(Math.random()*400);
+    y1 = Math.floor(Math.random()*400);
+    var block = document.getElementsByClassName("food")
+    block[0].style.left = x1.toString() + "px"
+    block[0].style.top =  y1.toString() + "px"
+    len++;
+    updateScore();
+    document.getElementById("snake").innerHTML +='<div class="body s' + len + '"></div>'
+
+}
+
+function eaten(){
+    if((x1-15< x) && (x1+15>x)&& (y1-15< y) && (y1+15>y)){
+        makeFood()
+    }
+}
+
+function updateScore(){
+
+    document.getElementById("score").innerHTML = (len-5).toString()
+
+}
+
+        </script>
+    </body>
+</html>
