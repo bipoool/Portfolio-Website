@@ -62,7 +62,7 @@ function PaperAndBookShelf() {
           <Col md={4} className="project-card">
             <ProjectCard
               isPaper={true}
-              title="Clean Code"
+              title="The Google File System"
               target="_blank"
               description="'The Google File System' by Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung introduces GFS, a scalable, distributed file system designed for large-scale data processing. It emphasizes fault tolerance, high throughput, and efficient handling of massive workloads, laying the foundation for modern big data storage systems."
               ghLink="https://drive.google.com/file/d/1OG_BfZx1qz5UAPLzXwcbxMpenG5BL0q2/view?usp=sharing"
