@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        BUILD_DIR = "/var/www/vipul-gupta-me"
+        BUILD_DIR = "/var/www/vipulgupta-me"
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     sh "sudo /bin/rm -rf ${BUILD_DIR}/*"
-                    sh "sudo /bin/mv build/* ${BUILD_DIR}/"
+                    sh "sudo /bin/mv build/ ${BUILD_DIR}/"
                 }
             }
         }
