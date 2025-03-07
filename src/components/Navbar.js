@@ -3,15 +3,12 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/VG.svg";
-import Button from "react-bootstrap/Button";
+import PaperAndBookShelf from "./PaperAndBookShelf/PaperAndBookShelf"
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
 import {
-  AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
-  AiOutlineUser,
+  AiOutlineBook,
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
@@ -75,10 +72,10 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/about"
+                to="/paperAndBookShelf"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                <AiOutlineBook style={{ marginBottom: "2px" }} /> Paper & Book Shelf
               </Nav.Link>
             </Nav.Item>
 

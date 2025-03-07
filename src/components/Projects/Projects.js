@@ -4,7 +4,10 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import bugFix from "../../Assets/Projects/bugfix.png"
 import github from "../../Assets/Projects/github.png"
+import Github from "./Github";
 import quadcopter from "../../Assets/Projects/quadcopter.png";
+import raspberryPi from "../../Assets/Projects/raspberryPi.png";
+import diceDb from "../../Assets/Projects/dicedb.png"
 import snakeGame from "../../Assets/Projects/snakeGame.png"
 
 function Projects() {
@@ -13,12 +16,38 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          My Recent <strong className="purple">Work </strong>
         </h1>
         <p style={{ color: "white" }}>
           Here are a few projects and open source contributions I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+                  
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={raspberryPi}
+              isOs={false}
+              title="Rasberry PI - WebServer"
+              target="_blank"
+              description="Built my own web-server using raspberry-pi 4. This server hosts several websites and I also use it for testing and learning new tech."
+              ghLink="https://vipulgupta.me"
+              demoLink="https://vipulgupta.me"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={diceDb}
+              isOs={true}
+              title="OS contribution - DiceDB"
+              target="_blank"
+              description="Multiple contributions in DiceDB. Resolved many bugs and implemented features"
+              ghLink="https://github.com/DiceDB/dice/issues/1493"
+              demoLink="https://github.com/DiceDB/dice/pull/1516"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={quadcopter}
@@ -66,6 +95,10 @@ function Projects() {
             />
           </Col>
 
+        </Row>
+
+        <Row>
+          <Github />
         </Row>
         
       </Container>
