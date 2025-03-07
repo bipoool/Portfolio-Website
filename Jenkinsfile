@@ -21,15 +21,15 @@ pipeline {
         stage('Deploy to NGINX') {
             steps {
                 script {
-                    sh "sudo rm -rf ${BUILD_DIR}/*"
-                    sh "sudo mv build/* ${BUILD_DIR}/"
+                    sh "sudo /bin/rm -rf ${BUILD_DIR}/*"
+                    sh "sudo /bin/mv build/* ${BUILD_DIR}/"
                 }
             }
         }
 
         stage('Restart Nginx') {
             steps {
-                sh "sudo systemctl restart nginx"
+                sh "sudo /bin/systemctl restart nginx"
             }
         }
     }
