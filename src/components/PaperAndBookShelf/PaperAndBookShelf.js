@@ -15,7 +15,7 @@ function PaperAndBookShelf() {
         Book <strong className="purple">Shelf </strong>
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects and open source contributions I've worked on recently.
+          Here are few books which I've read recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
@@ -56,7 +56,7 @@ function PaperAndBookShelf() {
         <strong className="purple">Paper </strong> Shelf
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects and open source contributions I've worked on recently.
+          Here are few research papers which I've read recently recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
