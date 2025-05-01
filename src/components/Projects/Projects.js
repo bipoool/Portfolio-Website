@@ -7,6 +7,8 @@ import github from "../../Assets/Projects/github.png"
 import Github from "./Github";
 import quadcopter from "../../Assets/Projects/quadcopter.png";
 import raspberryPi from "../../Assets/Projects/raspberryPi.png";
+import linkShortener from "../../Assets/Projects/linkShortener.png";
+import dicedbJava from "../../Assets/Projects/dicedbJava.png";
 import diceDb from "../../Assets/Projects/dicedb.png"
 import snakeGame from "../../Assets/Projects/snakeGame.png"
 
@@ -23,7 +25,31 @@ function Projects() {
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
 
-                  
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={dicedbJava}
+              isOs={false}
+              title="Link Shortener"
+              target="_blank"
+              description="Developed a Java SDK for DiceDB with full command support and reactivity. Implemented TCP-level connection pooling to optimize performance and resource management."
+              ghLink="https://github.com/bipoool/LinkShortener"
+              demoLink="https://shtln.xyz/shortener/"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={linkShortener}
+              isOs={false}
+              title="Link Shortener"
+              target="_blank"
+              description="Shorten your URLs easily using our simple API powered by GOLANG, PostgreSQL & DiceDB(for caching) with a ready to deploy docker file"
+              ghLink="https://github.com/bipoool/LinkShortener"
+              demoLink="https://shtln.xyz/shortener/"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={raspberryPi}
@@ -44,7 +70,7 @@ function Projects() {
               target="_blank"
               description="Multiple contributions in DiceDB. Resolved many bugs and implemented features"
               ghLink="https://github.com/DiceDB/dice/issues/1493"
-              demoLink="https://github.com/DiceDB/dice/pull/1516"
+              demoLink="https://github.com/DiceDB/dice/pulls?q=is\%3Apr+author\%3Abipoool+is\%3Aclosed"
             />
           </Col>
 
@@ -100,7 +126,7 @@ function Projects() {
         <Row>
           <Github />
         </Row>
-        
+
       </Container>
     </Container>
   );
