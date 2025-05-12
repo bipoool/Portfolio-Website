@@ -30,11 +30,11 @@ function Projects() {
             <ProjectCard
               imgPath={dicedbJava}
               isOs={false}
-              title="Link Shortener"
+              title="DiceDb Java SDK"
               target="_blank"
               description="Developed a Java SDK for DiceDB with full command support and reactivity. Implemented TCP-level connection pooling to optimize performance and resource management."
-              ghLink="https://github.com/bipoool/LinkShortener"
-              demoLink="https://shtln.xyz/shortener/"
+              ghLink="https://github.com/bipoool/dicedb-java"
+              demoLink="https://github.com/bipoool/dicedb-java"
             />
           </Col>
 
