@@ -9,8 +9,9 @@ import quadcopter from "../../Assets/Projects/quadcopter.png";
 import raspberryPi from "../../Assets/Projects/raspberryPi.png";
 import linkShortener from "../../Assets/Projects/linkShortener.png";
 import dicedbJava from "../../Assets/Projects/dicedbJava.png";
-import diceDb from "../../Assets/Projects/dicedb.png"
-import snakeGame from "../../Assets/Projects/snakeGame.png"
+import diceDb from "../../Assets/Projects/dicedb.png";
+import snakeGame from "../../Assets/Projects/snakeGame.png";
+import clouding from "../../Assets/Projects/clouding.png"
 
 function Projects() {
   return (
@@ -25,6 +26,17 @@ function Projects() {
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
 
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={clouding}
+              isOs={false}
+              title="Clouding - Infra Manager"
+              target="_blank"
+              description="The developer-first infrastructure management platform. Build, configure, and deploy your infrastructure with visual drag-and-drop simplicity."
+              ghLink="https://github.com/bipoool/clouding"
+              demoLink="https://clouding.co.in/"
+            />
+          </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
