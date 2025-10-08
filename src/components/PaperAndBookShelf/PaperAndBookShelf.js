@@ -12,7 +12,7 @@ function PaperAndBookShelf() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-        Book <strong className="purple">Shelf </strong>
+          Book <strong className="purple">Shelf </strong>
         </h1>
         <p style={{ color: "white" }}>
           Here are few books which I've read recently.
@@ -53,7 +53,7 @@ function PaperAndBookShelf() {
       </Container>
       <Container>
         <h1 className="project-heading">
-        <strong className="purple">Paper </strong> Shelf
+          <strong className="purple">Paper </strong> Shelf
         </h1>
         <p style={{ color: "white" }}>
           Here are few research papers which I've read recently recently.
@@ -66,6 +66,15 @@ function PaperAndBookShelf() {
               target="_blank"
               description="'The Google File System' by Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung introduces GFS, a scalable, distributed file system designed for large-scale data processing. It emphasizes fault tolerance, high throughput, and efficient handling of massive workloads, laying the foundation for modern big data storage systems."
               ghLink="https://drive.google.com/file/d/1OG_BfZx1qz5UAPLzXwcbxMpenG5BL0q2/view?usp=sharing"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              isPaper={true}
+              title="MyRocks: LSM-Tree Database Storage Engine"
+              target="_blank"
+              description="MyRocks, a new MySQL storage engine, was built on top of RocksDB by adding relational capabilities. With MyRocks, using the RocksDB API, significant efficiency gains were achieved while still benefiting from all the MySQL features and tools."
+              ghLink="https://drive.google.com/file/d/1jlBGA2hZUMgTa3mGJduswIHJ-L1wxTKX/view?usp=sharing"
             />
           </Col>
         </Row>
