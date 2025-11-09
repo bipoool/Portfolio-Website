@@ -13,6 +13,9 @@ COPY . .
 RUN npm run build
 
 FROM nginx:1.25-alpine AS runner
+
+# Copy custom nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copy the production build into Nginx's served directory
 COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
